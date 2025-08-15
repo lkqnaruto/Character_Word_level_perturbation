@@ -991,4 +991,43 @@ class HybridIRModelTester:
             report.append("  - No significant weaknesses identified")
         
         return "\n".join(report)
+    
+
+
+
+
+# class HybridIRModelTester:
+#     # ...existing code...
+
+#     def generate_test_cases(self, queries: List[str], 
+#                            perturbation_types: List[PerturbationType] = None,
+#                            intensity_levels: List[float] = None,
+#                            samples_per_query: int = 1) -> List[TestCase]:
+#         """Generate test cases by randomly choosing a perturbation type for each query"""
+#         if perturbation_types is None:
+#             perturbation_types = list(PerturbationType)
+        
+#         if intensity_levels is None:
+#             intensity_levels = [0.05, 0.1, 0.2, 0.3, 0.5]
+        
+#         test_cases = []
+        
+#         for query in queries:
+#             for _ in range(samples_per_query):
+#                 p_type = random.choice(perturbation_types)
+#                 intensity = random.choice(intensity_levels)
+#                 perturbed = self.perturbator.apply_perturbation(
+#                     query, p_type, intensity
+#                 )
+#                 expected_degradation = intensity * 0.5
+#                 test_cases.append(TestCase(
+#                     original_query=query,
+#                     perturbed_query=perturbed,
+#                     perturbation_type=p_type,
+#                     intensity=intensity,
+#                     expected_degradation=expected_degradation
+#                 ))
+        
+#         return test_cases
+#     # ...existing code...
 
